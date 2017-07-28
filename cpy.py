@@ -28,11 +28,11 @@ class Application(Frame):
             for files in Filelist:
                 realpath=os.path.join(path1,files)
                 shutil.copy (realpath,path2)
-                print "复制文件成功！"
+                tkMessageBox.showinfo(None,"复制文件成功！")
         except IOError,e:
-            print "文件路径错误或目标文件夹权限不足"
+            tkMessageBox.showinfo('Error',"文件路径错误或目标文件夹权限不足")
         except WindowsError,e:
-            print '文件路径错误'
+            tkMessageBox.showinfo('Error','文件路径错误')
         finally:
             tkMessageBox.showinfo('Message','End')
 
